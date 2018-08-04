@@ -1,4 +1,4 @@
-package com.example.administrator.hookdemo.hook;
+package com.xj.hookdemo.hook.activity;
 
 import android.content.ComponentName;
 import android.content.Intent;
@@ -6,12 +6,14 @@ import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
 
+import com.xj.hookdemo.hook.HookHelper;
+
 import java.lang.reflect.Field;
 
 /**
  * @author xujun  on 17/7/2018.
  */
-class ActivityThreadHandlerCallback implements Handler.Callback {
+public class ActivityThreadHandlerCallback implements Handler.Callback {
 
     private static final String TAG = "ActivityThreadHandlerCa";
     Handler mBase;

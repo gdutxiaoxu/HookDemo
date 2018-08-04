@@ -1,4 +1,4 @@
-package com.example.administrator.hookdemo.hook;
+package com.xj.hookdemo.hook.activity;
 
 import android.app.Activity;
 import android.app.Instrumentation;
@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.os.IBinder;
 import android.util.Log;
 
-import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
 /**
@@ -31,9 +30,9 @@ public class ApplicationInstrumentation extends Instrumentation {
 
         // Hook之前, 可以输出你想要的!
         Log.d(TAG, "xxxx: 执行了startActivity, 参数如下: " + "who = [" + who + "], " + "contextThread = " +
-                "" + "[" + contextThread + "], token = [" + token + "], " + "target = [" + target
-                + "], intent = [" + intent + "], requestCode = [" + requestCode + "], options = " +
-                "[" + options + "]");
+                "" + "" + "[" + contextThread + "], token = [" + token + "], " + "target = [" +
+                target + "], intent = [" + intent + "], requestCode = [" + requestCode + "], " +
+                "options = " + "[" + options + "]");
 
         // 开始调用原始的方法, 调不调用随你,但是不调用的话, 所有的startActivity都失效了.
         // 由于这个方法是隐藏的,因此需要使用反射调用;首先找到这个方法
@@ -49,6 +48,5 @@ public class ApplicationInstrumentation extends Instrumentation {
             throw new RuntimeException("do not support!!! pls adapt it");
         }
     }
-
 
 }

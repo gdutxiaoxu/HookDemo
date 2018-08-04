@@ -1,9 +1,4 @@
-package com.example.administrator.hookdemo.hook;
-
-/**
- * @author xujun  on 17/7/2018.
- */
-
+package com.xj.hookdemo.hook.activity;
 
 import android.content.ComponentName;
 import android.content.Intent;
@@ -12,6 +7,10 @@ import android.util.Log;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 
+/**
+ * @author xujun
+ * @time 4/8/2018 10:29.
+ */
 public class HookInvocationHandler implements InvocationHandler {
 
     private Object mAmsObj;
@@ -40,7 +39,8 @@ public class HookInvocationHandler implements InvocationHandler {
 
             // TODO: 2017/6/20 取出在真实的Intent
             Intent originallyIntent = (Intent) args[index];
-            Log.i("AMSHookUtil","HookInvocationHandler:" + originallyIntent.getComponent().getClassName());
+            Log.i("AMSHookUtil", "HookInvocationHandler:" + originallyIntent.getComponent()
+                    .getClassName());
             // TODO: 2017/6/20  自己伪造一个配置文件已注册过的Activity Intent
             Intent proxyIntent = new Intent();
             // TODO: 2017/6/20   因为我们调用的Activity没有注册，所以这里我们先偷偷换成已注册。使用一个假的Intent

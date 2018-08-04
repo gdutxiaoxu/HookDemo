@@ -1,11 +1,12 @@
-package com.example.administrator.hookdemo.hook;
+package com.xj.hookdemo.hook.activity;
 
 import android.content.ComponentName;
 import android.content.Intent;
 import android.util.Log;
 
-import com.example.administrator.hookdemo.BuildConfig;
-import com.example.administrator.hookdemo.activityhook.EmptyActivity;
+import com.xj.hookdemo.BuildConfig;
+import com.xj.hookdemo.activityhook.EmptyActivity;
+import com.xj.hookdemo.hook.HookHelper;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
@@ -13,7 +14,7 @@ import java.lang.reflect.Method;
 /**
  * @author xujun  on 17/7/2018.
  */
-class IActivityManagerHandler implements InvocationHandler {
+public class IActivityManagerHandler implements InvocationHandler {
 
     private static final String TAG = "IActivityManagerHandler";
     Object mBase;

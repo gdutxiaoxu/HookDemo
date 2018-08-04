@@ -1,4 +1,4 @@
-package com.example.administrator.hookdemo.hook;
+package com.xj.hookdemo.hook.activity;
 
 import android.app.Activity;
 import android.app.Instrumentation;
@@ -8,20 +8,19 @@ import android.os.Bundle;
 import android.os.IBinder;
 import android.util.Log;
 
-import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
 /**
  * @author xujun  on 16/7/2018.
  */
-public  class ActivityInstrumentation extends Instrumentation {
+public  class ActivityProxyInstrumentation extends Instrumentation {
 
-    private static final String TAG = "ActivityInstrumentation";
+    private static final String TAG = "ActivityProxyInstrumentation";
 
     // ActivityThread中原始的对象, 保存起来
     Instrumentation mBase;
 
-    public ActivityInstrumentation(Instrumentation base) {
+    public ActivityProxyInstrumentation(Instrumentation base) {
         mBase = base;
     }
 
@@ -50,8 +49,6 @@ public  class ActivityInstrumentation extends Instrumentation {
             throw new RuntimeException("do not support!!! pls adapt it");
         }
     }
-
-
 
 
 }

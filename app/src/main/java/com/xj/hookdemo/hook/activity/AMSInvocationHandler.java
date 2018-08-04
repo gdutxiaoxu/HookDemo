@@ -1,4 +1,4 @@
-package com.example.administrator.hookdemo.hook;
+package com.xj.hookdemo.hook.activity;
 
 import android.util.Log;
 
@@ -22,8 +22,7 @@ public class AMSInvocationHandler implements InvocationHandler {
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         //            Log.e(TAG, method.getName());
         if ("startActivity".equals(method.getName())) {
-            Log.e(TAG, "要开始启动了 啦啦啦啦啦啦  ");
-            Log.e(TAG, "method=" + method);
+            Log.i(TAG, "ready to startActivity");
             for (Object object : args) {
                 Log.d(TAG, "invoke: object=" + object);
             }
