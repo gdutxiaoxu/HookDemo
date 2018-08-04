@@ -1,4 +1,4 @@
-package com.example.administrator.hookdemo;
+package com.xj.hookdemo;
 
 import org.junit.Test;
 

@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 26
     defaultConfig {
-        applicationId "com.example.administrator.hookdemo"
+        applicationId "com.xj.hookdemo"
         minSdkVersion 15
         targetSdkVersion 23
         versionCode 1
