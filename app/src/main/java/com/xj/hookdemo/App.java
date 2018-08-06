@@ -4,7 +4,7 @@ import android.app.Application;
 import android.content.Context;
 import android.os.Handler;
 
-import com.xj.hookdemo.hook.activity.AMSHookUtil;
+import com.xj.hookdemo.hook.HookResetUtils;
 
 /**
  * @author xujun  on 17/7/2018.
@@ -18,8 +18,8 @@ public class App extends Application {
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(base);
         try {
-            mObject = AMSHookUtil.storeAms();
-            mHandler = AMSHookUtil.storeActivityLaunch();
+            mObject = HookResetUtils.storeAms();
+            mHandler = HookResetUtils.storeActivityLaunch();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -29,8 +29,8 @@ public class App extends Application {
 
     public static void reset(){
         try {
-            AMSHookUtil.resetAms(mObject);
-            AMSHookUtil.resetActivityLaunch(mHandler);
+            HookResetUtils.resetAms(mObject);
+            HookResetUtils.resetActivityLaunch(mHandler);
         } catch (Exception e) {
             e.printStackTrace();
         }

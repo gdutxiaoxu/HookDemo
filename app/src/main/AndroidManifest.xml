@@ -35,8 +35,6 @@
         </activity>
         <activity android:name=".activityhook.TestStartActivityNoRegister">
         </activity>
-        <activity android:name=".activityhook.TargetAppCompatActivity">
-        </activity>
     </application>
 
 </manifest>

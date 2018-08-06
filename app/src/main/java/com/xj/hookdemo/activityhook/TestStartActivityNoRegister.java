@@ -9,7 +9,6 @@ import android.view.View;
 import com.xj.hookdemo.App;
 import com.xj.hookdemo.R;
 import com.xj.hookdemo.hook.activity.AMSHookUtil;
-import com.xj.hookdemo.hook.HookHelper;
 
 public class TestStartActivityNoRegister extends AppCompatActivity {
 
@@ -26,22 +25,34 @@ public class TestStartActivityNoRegister extends AppCompatActivity {
         setContentView(R.layout.activity_test_start_no_register);
     }
 
-    public void onButtonClick(View v){
-        switch (v.getId()){
+    public void onButtonClick(View v) {
+        switch (v.getId()) {
             case R.id.btn_1:
                 App.reset();
                 try {
-                    HookHelper.hookActivityManagerNative();
-                    HookHelper.hookActivityThreadHandler();
+                    AMSHookUtil.hookActivity(this, false);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-                startActivity(new Intent(this,TargetActivity.class));
+                startActivity(new Intent(this, TargetAppCompatActivity.class));
                 break;
             case R.id.btn_2:
                 App.reset();
-                AMSHookUtil.hookStartActivity(this);
-                startActivity(new Intent(this,TargetAppCompatActivity.class));
+                try {
+                    //                    HookHelper.hookActivityThreadHandler();
+                    //                    HookHelper.hookActivityManagerNative();
+                    AMSHookUtil.hookActivity(this, false);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                startActivity(new Intent(this, TargetActivity.class));
+                break;
+            case R.id.btn_3:
+                App.reset();
+                startActivity(new Intent(this, TargetAppCompatActivity.class));
+                break;
+
+            default:
                 break;
         }
     }
