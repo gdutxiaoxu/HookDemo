@@ -13,8 +13,12 @@ import android.view.View;
 import com.xj.hookdemo.activityhook.TestClipboardActivity;
 import com.xj.hookdemo.activityhook.TestHookStartActivity;
 import com.xj.hookdemo.hook.notification.NotificationHookHelper;
+import com.xj.hookdemo.rxjava.RxJavaHookActivity;
+import com.xj.hookdemo.thread.TestThreadHookActivity;
 
 import static android.app.PendingIntent.FLAG_UPDATE_CURRENT;
+
+import hu.akarnokd.rxjava2.debug.RxJavaAssemblyTracking;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        RxJavaAssemblyTracking.enable();
     }
 
     public void onButtonClick(View view) {
@@ -49,6 +54,13 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.btn_4:
                 jump(this, TestClipboardActivity.class);
+                break;
+            case R.id.btn_5:
+                jump(this, TestThreadHookActivity.class);
+                break;
+
+            case R.id.btn_rx:
+                jump(this, RxJavaHookActivity.class);
                 break;
 
         }

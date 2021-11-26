@@ -35,5 +35,23 @@
         android:text="Hook ClipboardManager"
         android:textAllCaps="false"/>
 
+    <Button
+        android:id="@+id/btn_5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onButtonClick"
+        android:text="Hook Thread"
+        android:textAllCaps="false"/>
+
+
+    <Button
+        android:id="@+id/btn_rx"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onButtonClick"
+        android:text="Hook Rxjava"
+        android:textAllCaps="false"/>
+
+
 
 </LinearLayout>
